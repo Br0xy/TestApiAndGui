@@ -50,4 +50,13 @@ public class TestUser extends RestAssured {
         then().
                 statusCode(202);
     }
+
+    @Test
+    public void RemoveUser() {
+       given().
+               parameters("id",1).
+       when().
+               delete("http://localhost:62019/api/User").
+       then().statusCode(204);
+    }
 }
