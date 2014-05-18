@@ -35,6 +35,15 @@ public class TestUser extends RestAssured {
                 body("Name", equalTo("Mille")).
                 statusCode(200);
     }
+	
+	@Test
+    public void GetSingelUserTwo() {
+        when().
+                get("http://localhost:62019/api/User/2").
+        then().
+                body("Name", equalTo("Mille")).
+                statusCode(200);
+    }
 
     @Test @Ignore
     public void AddUser() {
